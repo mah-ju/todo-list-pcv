@@ -35,4 +35,4 @@ Este projeto foi desenvolvido como parte dos meus estudos. O objetivo foi pratic
 
 ## Visão geral
 
-<img src="./public/overview-2-todoList.gif" width="500"  />
+<img src="./public/overview-2-todoList.gif" width="700"  />
