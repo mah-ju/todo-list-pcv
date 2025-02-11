@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Todo List 🗒️
 
-## Getting Started
+Este projeto foi desenvolvido como parte dos meus estudos. O objetivo foi praticar conceitos essenciais como manipulação de estados, tipagem com TypeScript e estilização com Tailwind CSS, além de trabalhar com validação de formulários usando React Hook Form e Yup.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+ ## Funcionalidades
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Adicionar tarefas** → Criação de novas tarefas com título e categoria
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Editar e excluir tarefas** → Permite modificar ou remover tarefas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Marcar como feita/a fazer** → Alterna entre tarefa concluída ou pendente
 
-## Learn More
+- **Filtro por status** → Exibe apenas as tarefas filtradas por "feitas", "a fazer" ou "todas".
 
-To learn more about Next.js, take a look at the following resources:
+- **Contador de tarefas** → Mostra a quantidade de tarefas filtradas
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Barra de pesquisa** → Busca tarefas pelo título
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Ordenação alfabética** → Organiza as tarefas de A-Z ou Z-A
 
-## Deploy on Vercel
+- **Responsividade** → Layout adaptável para diferentes tamanhos de tela
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tecnologias
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![Static badge](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+
+![Static badge](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge)
+
+
+![Static badge](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
+
+![Static Badge](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
+
+## Visão geral
+
+<img src="./public/overview-2-todoList.gif" width="300"  />
