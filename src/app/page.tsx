@@ -41,7 +41,7 @@ export default function Home() {
     )
     .filter((task) => {
       if (filterStatus === "todas") return true;
-      if (filterStatus === "feitas") return task.checked;
+      if (filterStatus === "feita") return task.checked;
       if (filterStatus === "fazer") return !task.checked;
       return true;
     })
@@ -54,6 +54,7 @@ export default function Home() {
       }
     });
 
+  
   return (
     <div className="">
       <ToDoList
@@ -78,3 +79,4 @@ export default function Home() {
     </div>
   );
 }
+

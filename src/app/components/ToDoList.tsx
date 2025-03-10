@@ -47,6 +47,12 @@ export const ToDoList = ({
     reset();
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLFormElement>) => {
+    if (e.key === "Enter") {
+      handleSubmit(submitData);
+    }
+  };
+
   return (
     <div className="bg-white w-[90%] mt-8 sm:w-[80%] md:w-[70%] lg:w-[45%] pb-10 mb-12 md:mb-16 mx-auto rounded-md">
       <h1 className="text-black text-3xl md:text-4xl font-bold text-center py-6">
@@ -56,6 +62,7 @@ export const ToDoList = ({
       <div className="mx-4">
         <form
           onSubmit={handleSubmit(submitData)}
+          onKeyDown={handleKeyDown}
           className=" mt-6 flex flex-col gap-1 mb-5"
         >
           <div className="flex justify-center">
@@ -129,10 +136,7 @@ export const ToDoList = ({
               <option value="todas" className="text-xs md:text-sm lg:text-base">
                 Todas
               </option>
-              <option
-                value="feitas"
-                className="text-xs md:text-sm lg:text-base"
-              >
+              <option value="feita" className="text-xs md:text-sm lg:text-base">
                 Feitas
               </option>
               <option
