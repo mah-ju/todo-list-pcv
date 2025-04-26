@@ -16,11 +16,7 @@ services:
       dockerfile: Dockerfile
     container_name: todoList-next
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: strong_password
-      POSTGRES_HOST: db
-      POSTGRES_DB: todo_list
-      POSTGRES_PORT: 5432
+      DATABASE_URL: postgresql://admin:strong_password@db:5432/todo_list
       NODE_ENV: development
     ports:
       - "3000:3000"
