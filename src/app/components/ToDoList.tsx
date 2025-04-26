@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Task } from "@/types/task";
+import { createActivity } from "@/services/createActivity";
 
 const schema = yup.object().shape({
   title: yup.string().required("Adicione uma tarefa"),
@@ -10,6 +11,7 @@ const schema = yup.object().shape({
     .string()
     .oneOf(["estudos", "trabalho", "pessoal"])
     .required("Selecione uma categoria"),
+  
 });
 
 type todoListProps = {
@@ -40,11 +42,19 @@ export const ToDoList = ({
     resolver: yupResolver(schema),
   });
 
-  const submitData = (data: Task) => {
-    console.log(data);
-    const newTask = { ...data, id: crypto.randomUUID() };
-    addTask(newTask);
-    reset();
+  const submitData = async (data: Task) => {
+    try {
+      const newTask = await createActivity(data.title, data.category);
+
+      if (!newTask) {
+        throw new Error("Erro ao adicionar atividade");
+      }
+
+      addTask(newTask);
+      reset();
+    } catch (error) {
+      console.error("Erro no submit:", error);
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLFormElement>) => {

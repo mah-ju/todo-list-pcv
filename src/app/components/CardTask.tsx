@@ -4,10 +4,11 @@ import { useState } from "react";
 
 type cardTaskProps = {
   task: Task;
-  updateTask: (id: string, updatedTitle: string) => void;
-  taskId: string;
-  removeTask: (id: string) => void;
-  toggleCheck: (id: string) => void;
+  updateTask: (id: number, updatedTitle: string) => void;
+  taskId: number;
+  removeTask: (id: number) => void;
+  toggleCheck: (id: number, activity_status: "fazer" | "feita") => void;
+
 };
 
 export const CardTask = ({
@@ -52,14 +53,14 @@ export const CardTask = ({
             <>
               <h3
                 className={`md:text-xl ${
-                  task.checked ? "line-through text-gray-500 italic" : ""
+                  task.activity_status === "feita" ? "line-through text-gray-500 italic" : ""
                 }`}
               >
                 {task.title}
               </h3>
               <p
                 className={`text-sm md:text-base capitalize ${
-                  task.checked ? "line-through text-gray-500 italic" : ""
+                  task.activity_status === "feita" ? "line-through text-gray-500 italic" : ""
                 }`}
               >
                 ({task.category})
@@ -69,7 +70,7 @@ export const CardTask = ({
         </div>
         <div className="flex gap-4 md:gap-8">
           <button
-            onClick={() => toggleCheck(task.id!)}
+            onClick={() =>toggleCheck(task.id!, task.activity_status!)}
             className={`bg-green-400 rounded transition-opacity duration-200 ease-in-out ${
               isEditing ? "opacity-0" : "opacity-100"
             }`}
