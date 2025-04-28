@@ -1,6 +1,12 @@
 import { Pool } from 'pg';
 
-const pool = new Pool({
+const pool = new Pool(
+    process.env.DATABASE_URL
+   ? { 
+    connectionString: process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: false }
+
+   } : {
     host: process.env.POSTGRES_HOST || 'localhost',
     port: Number(process.env.POSTGRES_PORT) || 5432,
     user: process.env.POSTGRES_USER,
