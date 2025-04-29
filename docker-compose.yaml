@@ -15,7 +15,12 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: todoList-next
-    environment:
+    environment: 
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: strong_password
+      POSTGRES_DB: todo_list
       DATABASE_URL: postgresql://admin:strong_password@db:5432/todo_list
       NODE_ENV: development
     ports:
@@ -24,6 +29,8 @@ services:
       - .:/app
     working_dir: /app
     command: npm run dev
+    depends_on:
+      - db
 volumes:
   postgres_data:
    external: true

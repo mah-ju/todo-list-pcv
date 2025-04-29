@@ -1,7 +1,8 @@
 import { Pool } from 'pg';
 
+const isProduction = process.env.NODE_ENV === 'production';
 const pool = new Pool(
-    process.env.DATABASE_URL
+   isProduction && process.env.DATABASE_URL
    ? { 
     connectionString: process.env.DATABASE_URL,
     ssl: { rejectUnauthorized: false }
